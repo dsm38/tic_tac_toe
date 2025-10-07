@@ -8,7 +8,7 @@ class Board:
 
     def make_move(self, row, col, player):
         self.board[row][col] = player
-
+        
     def display(self):
         for row in self.board:
             print("|".join(row))
@@ -38,5 +38,4 @@ class Board:
         return f"Размер игрового поля ({self.field_size} X {self.field_size})"
 
 
-ll = [[" "], [" "], [" "], [" "], [" "], [" "], [" "], [" "], [" "]]
-print(any(ll))
+
