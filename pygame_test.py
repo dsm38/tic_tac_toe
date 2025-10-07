@@ -21,9 +21,8 @@ screen.fill(BG_COLOR)
 
 
 def save_result(result):
-    file = open("result.txt", "a", encoding="utf-8")
-    file.write(result + "\n")
-    file.close()
+    with open("result.txt", "a", encoding="utf-8") as file:
+        file.write(result + "\n")
 
 
 def draw_lines():
@@ -101,7 +100,7 @@ def main():
                     save_result(result)
                     print(result)
                     running = False
-                if game.is_board_full():
+                if game.is_board_full() and not (game.check_win(player_current)):
                     result = "Ничья"
                     save_result(result)
                     print(result)
